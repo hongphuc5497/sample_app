@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
     # Returns true if the given token matches the digest.
     def authenticated?(remember_token)
-        return false if remember_token.nil? # boolean? ? do_one_thing : do_something_else
+        return false if remember_digest.nil? # boolean? ? do_one_thing : do_something_else
         # above code equivalent to the following code :
         # if remember_digest.nil?
         #   false
