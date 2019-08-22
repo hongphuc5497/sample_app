@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       log_in @user 
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user) #when log in, remember user despite closing the browser 
-      redirect_to @user 
+      # redirect_to @user
+      redirect_back_or @user
     else  
       flash.now[:danger] = 'Invalid email/password combination' # Create an error message.
       render 'new'
