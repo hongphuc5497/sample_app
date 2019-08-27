@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index 
     # @users = User.all
-    @users = User.where(activated: true).paginate(page: params[:page], per_page: 10) #show only users had been activated
+    @users = User.where(activated: true).paginate(page: params[:page]) #show only users had been activated
   end 
 
   def show 
